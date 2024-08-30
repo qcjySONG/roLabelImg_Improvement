@@ -16,6 +16,7 @@ I am currently writing my undergraduate thesis, which involves weakly supervised
 - rolabelImg：The most widely introduced annotation software online, but it stopped being maintained after updating to V3 in 2020. Its annotation method (drawing a rectangle first -> rotating to the appropriate angle using a shortcut -> adjusting size) avoids the issue of part of the annotation box being outside the image (a problem specific to rotating boxes), but it is not intuitive enough.
 - labelme：An article on Zhihu introduces how to use polygon annotation for rotating boxes. Although this method is simpler compared to rolabelImg’s original method, it involves annotating four points and a time-consuming minimum bounding rectangle operation. [link](https://zhuanlan.zhihu.com/p/430850089)。
 - mvtec：This software has the most intuitive annotation method (which I am also using as a basis for my thesis, though I'll present it as my innovation). However, it is a foreign software, very large, and difficult to download. Annotation method Bilibili link: [link](https://www.bilibili.com/video/BV1ne411p7gN/?share_source=copy_web&vd_source=64142f260d920ecb9e7a7e71f98a7d7a)
+
 Based on this, I chose to improve the widely used rolabelImg by integrating the annotation method from mvtec to make rotating box annotation both simple and fast. The changes in the code are minimal, but understanding the legacy code is the challenge.
 
 ### Comparison of Existing Open-Source Rotating Box Annotation Software
@@ -31,10 +32,7 @@ Based on this, I chose to improve the widely used rolabelImg by integrating the 
 ### Differences from My Thesis
 In my thesis, I propose a weakly supervised rotating object detection model based on H2RBox, aimed at achieving efficient conversion from horizontal box annotation datasets to rotating box annotations. This model effectively utilizes existing horizontal box annotation data and, through weak supervision learning, measures the consistency of detection under different rotation angles. It automatically extracts the orientation information of the target and converts it into precise rotating box annotations, providing strong support for data annotation in rotating object detection tasks.
 
-<video width="1920" controls>
-  <source src="./GIF/my_model.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[Download Video](./GIF/my_model.mp4)
 
 ### others
 Below is an introduction from a Bilibili :

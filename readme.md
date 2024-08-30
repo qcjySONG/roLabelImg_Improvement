@@ -16,6 +16,7 @@
 - rolabelImg：网上介绍的最多的一款标注软件，但是其在2020年更新完V3之后就停止了维护；其次，本人觉得它的标注方式（先绘制矩形框——>再通过快捷键旋转至目标合适的角度——>再调整至合适的大小）虽然能够很好的避免标注框存在部分位于图像外面的风险（这是旋转框特有的问题），但是确实不够直观。
 - labelme：在知乎有篇文章介绍了如何使用多边形标注旋转框。该方法虽然一定程度上比rolabelImg原本的方法简单，但是要标注4个点以及存在耗时的取最小外接矩形操作。文章链接: [link](https://zhuanlan.zhihu.com/p/430850089)
 - mvtec：它的标注方式是最直观的（本文也是利用的它的标注方式，当然本科论文上我会写是我的创新点），但是这个软件是外国的软件，并且非常大，下载难。标注方式b站链接: [link](https://www.bilibili.com/video/BV1ne411p7gN/?share_source=copy_web&vd_source=64142f260d920ecb9e7a7e71f98a7d7a)
+
 基于此，我选取了最多人使用的rolabelImg融合mvtec的标注方法进行改进，让旋转框的标注又简单又快。具体改变的代码其实不多，难的是看懂这些陈年老代码。
 
 ### 目前部分开源旋转框标注软件对比
@@ -31,9 +32,7 @@
 ### 与我的毕业论文中的区别
 我的毕业论文提出一种基于H2RBox的弱监督旋转目标检测模型，旨在实现水平框标注数据集到旋转框标注的高效转换。该模型能够有效利用已有的水平框标注数据，通过弱监督学习的方式，衡量不同旋转视角下检测的一致性，自动提取目标的方向信息，并将其转换为精确的旋转框标注，为旋转目标检测任务提供有力的辅助数据标注支持。H2RBox模型：Yang X, Zhang G, Li W, et al. H2rbox: Horizontal box annotation is all you need for oriented object detection[J]. arXiv preprint arXiv:2210.06742, 2022.
 
-<video width="640" controls>
-  <source src="./GIF/my_model.mp4" type="video/mp4">
-</video>
+[Download Video](./GIF/my_model.mp4)
 
 ### others
 以下为B站的一位up主的介绍
