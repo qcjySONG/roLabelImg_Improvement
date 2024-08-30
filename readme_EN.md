@@ -29,6 +29,11 @@ Based on this, I chose to improve the widely used rolabelImg by integrating the 
 - As shown in the figure above, compared to the “Cross Annotation Method” of RolabelImg and LabelImg, the rotating box drawing method designed in this paper is more intuitive and direct. This method eliminates any extra cumbersome steps, making the annotation process more efficient and accurate, providing a more convenient and precise annotation tool for rotating object detection tasks.
 ![com](GIF%2Fcom.png)
 
+## Annotation Principle
+For details, please refer to the PDF.
+
+[Link to PDF](./tools/标注方法原理(Principle%20of%20Annotation%20Method).pdf)
+
 ### Differences from My Thesis
 In my thesis, I propose a weakly supervised rotating object detection model based on H2RBox, aimed at achieving efficient conversion from horizontal box annotation datasets to rotating box annotations. This model effectively utilizes existing horizontal box annotation data and, through weak supervision learning, measures the consistency of detection under different rotation angles. It automatically extracts the orientation information of the target and converts it into precise rotating box annotations, providing strong support for data annotation in rotating object detection tasks.
 
