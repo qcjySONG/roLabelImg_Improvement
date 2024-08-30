@@ -27,6 +27,7 @@ Based on this, I chose to improve the widely used rolabelImg by integrating the 
 
 ### Differences from My Thesis
 In my thesis, I propose a weakly supervised rotating object detection model based on H2RBox, aimed at achieving efficient conversion from horizontal box annotation datasets to rotating box annotations. This model effectively utilizes existing horizontal box annotation data and, through weak supervision learning, measures the consistency of detection under different rotation angles. It automatically extracts the orientation information of the target and converts it into precise rotating box annotations, providing strong support for data annotation in rotating object detection tasks.
+
 <video width="1920" controls>
   <source src="./GIF/my_model.mp4" type="video/mp4">
   Your browser does not support the video tag.
