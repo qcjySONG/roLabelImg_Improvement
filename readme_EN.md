@@ -2,9 +2,12 @@
 
 # Improved Rotating Box Annotation Tool of rolabelimg
 
-<div align="center">
-[Chinese](./readme.md)
+<br><br>
+<div align="center" style="margin-bottom: 2em;">
+  <a href="./readme.md" style="font-size: 40px;">Chinese</a>
 </div>
+<br><br>
+<br><br>
 
 ![wayshow.gif](GIF%2Fwayshow.gif)
 

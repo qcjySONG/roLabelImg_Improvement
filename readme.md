@@ -31,9 +31,8 @@
 ### 与我的毕业论文中的区别
 我的毕业论文提出一种基于H2RBox的弱监督旋转目标检测模型，旨在实现水平框标注数据集到旋转框标注的高效转换。该模型能够有效利用已有的水平框标注数据，通过弱监督学习的方式，衡量不同旋转视角下检测的一致性，自动提取目标的方向信息，并将其转换为精确的旋转框标注，为旋转目标检测任务提供有力的辅助数据标注支持。H2RBox模型：Yang X, Zhang G, Li W, et al. H2rbox: Horizontal box annotation is all you need for oriented object detection[J]. arXiv preprint arXiv:2210.06742, 2022.
 
-<video width="1920" controls>
+<video width="640" controls>
   <source src="./GIF/my_model.mp4" type="video/mp4">
-  Your browser does not support the video tag.
 </video>
 
 ### others
