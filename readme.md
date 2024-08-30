@@ -3,7 +3,7 @@
 # (Improved Rotating Box Annotation Tool of rolabelimg)改进旋转框标注工具rolabelimg
 
 <div align="center">
-[English](./readme_EN.md)
+  <a href="./readme_EN.md">English</a>
 </div>
 
 ![wayshow.gif](GIF%2Fwayshow.gif)
@@ -11,7 +11,7 @@
 ###  前言
 最近在写本科毕业论文，涉及弱监督有向目标检测和旋转框标注软件的搭建。调查了市面上的一圈旋转框标注软件，其实感觉不太好用。
 - rolabelImg：网上介绍的最多的一款标注软件，但是其在2020年更新完V3之后就停止了维护；其次，本人觉得它的标注方式（先绘制矩形框——>再通过快捷键旋转至目标合适的角度——>再调整至合适的大小）虽然能够很好的避免标注框存在部分位于图像外面的风险（这是旋转框特有的问题），但是确实不够直观。
-- labelme：在知乎有篇文章介绍了如何使用多边形标注旋转框，文章链接: [link](https://zhuanlan.zhihu.com/p/430850089)。该方法虽然一定程度上比rolabelImg原本的方法简单，但是要标注4个点以及存在耗时的取最小外接矩形操作。
+- labelme：在知乎有篇文章介绍了如何使用多边形标注旋转框。该方法虽然一定程度上比rolabelImg原本的方法简单，但是要标注4个点以及存在耗时的取最小外接矩形操作。文章链接: [link](https://zhuanlan.zhihu.com/p/430850089)
 - mvtec：它的标注方式是最直观的（本文也是利用的它的标注方式，当然本科论文上我会写是我的创新点），但是这个软件是外国的软件，并且非常大，下载难。标注方式b站链接: [link](https://www.bilibili.com/video/BV1ne411p7gN/?share_source=copy_web&vd_source=64142f260d920ecb9e7a7e71f98a7d7a)
 基于此，我选取了最多人使用的rolabelImg融合mvtec的标注方法进行改进，让旋转框的标注又简单又快。具体改变的代码其实不多，难的是看懂这些陈年老代码。
 
