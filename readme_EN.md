@@ -11,7 +11,7 @@
 
 ![wayshow.gif](GIF%2Fwayshow.gif)
 
-###  Introduction
+##  Introduction
 I am currently writing my undergraduate thesis, which involves weakly supervised oriented object detection and the development of rotating box annotation software. After researching various rotating box annotation tools available on the market, I found them to be less user-friendly.
 - rolabelImg：The most widely introduced annotation software online, but it stopped being maintained after updating to V3 in 2020. Its annotation method (drawing a rectangle first -> rotating to the appropriate angle using a shortcut -> adjusting size) avoids the issue of part of the annotation box being outside the image (a problem specific to rotating boxes), but it is not intuitive enough.
 - labelme：An article on Zhihu introduces how to use polygon annotation for rotating boxes. Although this method is simpler compared to rolabelImg’s original method, it involves annotating four points and a time-consuming minimum bounding rectangle operation. [link](https://zhuanlan.zhihu.com/p/430850089)。
@@ -19,7 +19,9 @@ I am currently writing my undergraduate thesis, which involves weakly supervised
 
 Based on this, I chose to improve the widely used rolabelImg by integrating the annotation method from mvtec to make rotating box annotation both simple and fast. The changes in the code are minimal, but understanding the legacy code is the challenge.
 
-### Comparison of Existing Open-Source Rotating Box Annotation Software
+==If you do not know what a rotating box (or oriented box) is, please run test.py first==
+
+## Comparison of Existing Open-Source Rotating Box Annotation Software
 - RolabelImg is built on the PyQt library in Python and focuses on rotating box annotation. Its easy installation makes it the most bookmarked rotating box annotation software on GitHub. Annotating a rotating box involves three steps: first, draw a horizontal box on the target and set the target's name; second, use the corresponding shortcut to adjust the orientation; third, use the mouse to adjust the size and position of the rotating box. The annotation process is shown in the figure below.
 ![RolabelImg](GIF%2Fway1.png)
 - Unlike RolabelImg, LabelImg supports annotation for images, text, hypertext, audio, video, and time-series data, making it a versatile annotation tool. For images, LabelImg supports only horizontal boxes and polygons, and does not directly support rotating boxes. However, an online method called the “Cross Annotation Method” can achieve rotating box annotation using LabelImg. Link The “Cross Annotation Method” involves annotating five points in a cross pattern around the target, exporting the annotation file, using a minimum bounding rectangle calculator to convert it into a rotating box, and then re-importing the file into LabelImg for final adjustments (direction adjustments are not possible). The annotation process is shown below.
@@ -34,12 +36,12 @@ For details, please refer to the PDF.
 
 [Link to PDF](./tools/标注方法原理(Principle%20of%20Annotation%20Method).pdf)
 
-### Differences from My Thesis
+## Differences from My Thesis
 In my thesis, I propose a weakly supervised rotating object detection model based on H2RBox, aimed at achieving efficient conversion from horizontal box annotation datasets to rotating box annotations. This model effectively utilizes existing horizontal box annotation data and, through weak supervision learning, measures the consistency of detection under different rotation angles. It automatically extracts the orientation information of the target and converts it into precise rotating box annotations, providing strong support for data annotation in rotating object detection tasks.
 
 [Download Video](./GIF/my_model.mp4)
 
-### others
+## others
 Below is an introduction from a Bilibili :
 
 Original Author’s Github Link: [https://github.com/cgvict/roLabelImg](https://github.com/cgvict/roLabelImg)
@@ -51,7 +53,7 @@ Baidu Netdisk Link (with examples and exe):[https://pan.baidu.com/s/1FOxz3gAXcj3
 CSDN Homepage Link:[https://blog.csdn.net/noneNull0?type=blog](https://blog.csdn.net/noneNull0?type=blog)
 
 Bilibili Video Demonstration Link:  [https://www.bilibili.com/video/BV1GR4y1X7fq/?vd_source=a6067b731745325c01a4edfa46bf5a04](https://www.bilibili.com/video/BV1GR4y1X7fq/?vd_source=a6067b731745325c01a4edfa46bf5a04)
-### Background Knowledge:
+## Background Knowledge:
 &emsp;&emsp;Compared to the traditional horizontal bounding box labels, Oriented Bounding Boxes (OBB) or rotating bounding boxes can better fit the target. The main information is represented by a five-tuple (cx, cy, w, h, angle).
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/65e02f5dd11a4551a7828044b25a7722.png)
 
@@ -59,7 +61,7 @@ Bilibili Video Demonstration Link:  [https://www.bilibili.com/video/BV1GR4y1X7fq
 &emsp;cx and cy are the coordinates of the center of the bounding box (with the coordinate system direction the same as the typical image coordinate system, with the top-left corner as the origin, right as the positive x direction, and down as the positive y direction)
 &emsp;h and w are the height and width of the target
 &emsp;angle is the rotation angle information, where angle = 0 for a horizontal bounding box. For clockwise rotation, the angle value is a positive value in radians, with a full rotation being π, and no negative values.
-### Installation Process:：
+## Installation Process:：
 - 1、Download the rolabelimg source code (link at the beginning) You can choose the packaged exe for direct execution, skipping steps 2 and 3.
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/0fe334f5f4c2487a8e545f1d9825a02c.png)
@@ -80,7 +82,7 @@ python roLabelImg.py
 
 
 
-### Common Shortcuts:
+## Common Shortcuts:
 Shortcut | 作用|Function
 -------- | -----|-----
 | Ctrl + u   |从目录加载所有图像| Load all of the images from a directory    |

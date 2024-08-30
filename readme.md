@@ -11,7 +11,7 @@
 
 ![wayshow.gif](GIF%2Fwayshow.gif)
 
-###  前言
+##  前言
 最近在写本科毕业论文，涉及弱监督有向目标检测和旋转框标注软件的搭建。调查了市面上的一圈旋转框标注软件，其实感觉不太好用。
 - rolabelImg：网上介绍的最多的一款标注软件，但是其在2020年更新完V3之后就停止了维护；其次，本人觉得它的标注方式（先绘制矩形框——>再通过快捷键旋转至目标合适的角度——>再调整至合适的大小）虽然能够很好的避免标注框存在部分位于图像外面的风险（这是旋转框特有的问题），但是确实不够直观。
 - labelme：在知乎有篇文章介绍了如何使用多边形标注旋转框。该方法虽然一定程度上比rolabelImg原本的方法简单，但是要标注4个点以及存在耗时的取最小外接矩形操作。文章链接: [link](https://zhuanlan.zhihu.com/p/430850089)
@@ -19,7 +19,9 @@
 
 基于此，我选取了最多人使用的rolabelImg融合mvtec的标注方法进行改进，让旋转框的标注又简单又快。具体改变的代码其实不多，难的是看懂这些陈年老代码。
 
-### 目前部分开源旋转框标注软件对比
+==如果你不知道何为旋转框（有向框）,请先运行test.py==
+
+## 目前部分开源旋转框标注软件对比
 - RolabelImg基于Python中的PyQt库而建立且专注于旋转框的标注，由于其安装较为容易，是目前Github上获得收藏数最多的旋转框标注软件。其标注一个旋转框总共可以拆分为3步：首先，在待标注目标上绘制一个水平框并设置目标的名称；其次，使用相应的快捷键进行方向的调整；最后，使用鼠标对旋转框进行大小和位置的调整。具体绘制过程如下图所示。
 ![RolabelImg](GIF%2Fway1.png)
 - 与RolabelImg不同，LabelImg支持适用于图像、文本、超文本、音频、视频和时间序列数据的标注，是集大成者的标注软件。对于其图像部分，LabelImg仅支持水平框与多边形标注，不直接支持旋转框标注。但网络上有网友分享的“十字标注法”亦可实现使用LabelImg标注旋转框。“十字标注法”主要使用的为多边形标注工具，具体标注过程同样可分为三步：首先，在待标注目标的周围交叉标注5个点，使标注图形呈交叉封闭状态；其次，将标注好的文件进行导出并使用最小外接矩形计算器将标注图像转为旋转框；最后，将转换后的文件再次导入LabelImg中进行位置的微调（无法对方向进行微调）。具体标注过程入下图所示。[Link]:(https://zhuanlan.zhihu.com/p/430850089)
@@ -35,14 +37,14 @@
 [Link to PDF](./tools/标注方法原理(Principle%20of%20Annotation%20Method).pdf)
 
 
-### 与我的毕业论文中的区别
+## 与我的毕业论文中的区别
 我的毕业论文提出一种基于H2RBox的弱监督旋转目标检测模型，旨在实现水平框标注数据集到旋转框标注的高效转换。该模型能够有效利用已有的水平框标注数据，通过弱监督学习的方式，衡量不同旋转视角下检测的一致性，自动提取目标的方向信息，并将其转换为精确的旋转框标注，为旋转目标检测任务提供有力的辅助数据标注支持。
 
 H2RBox模型：Yang X, Zhang G, Li W, et al. H2rbox: Horizontal box annotation is all you need for oriented object detection[J]. arXiv preprint arXiv:2210.06742, 2022.
 
 [Download Video](./GIF/my_model.mp4)
 
-### others
+## others
 以下为B站的一位up主的介绍
 
 原作者Github链接: [https://github.com/cgvict/roLabelImg](https://github.com/cgvict/roLabelImg)
@@ -54,7 +56,7 @@ Up Github链接(附样例)：[https://github.com/Samsara0Null/roLabelImg](https:
 CSDN主页链接: [https://blog.csdn.net/noneNull0?type=blog](https://blog.csdn.net/noneNull0?type=blog)
 
 Bilibili视频演示讲解链接: [https://www.bilibili.com/video/BV1GR4y1X7fq/?vd_source=a6067b731745325c01a4edfa46bf5a04](https://www.bilibili.com/video/BV1GR4y1X7fq/?vd_source=a6067b731745325c01a4edfa46bf5a04)
-### 背景知识（background knowledge）：
+## 背景知识（background knowledge）：
 &emsp;&emsp;相较原有的水平矩形方框标签，OBB定向包围框(oriented bounding box)即旋转方框标签可更加贴合目标，其主要信息由一个五元组组成(cx，cy，w，h，angle)。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/65e02f5dd11a4551a7828044b25a7722.png)
 
@@ -84,7 +86,7 @@ python roLabelImg.py
 
 
 
-### 常用快捷键：
+## 常用快捷键：
 快捷键 | 作用|原文
 -------- | -----|-----
 | Ctrl + u   |从目录加载所有图像| Load all of the images from a directory    |
