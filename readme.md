@@ -1,10 +1,13 @@
 
 
 # (Improved Rotating Box Annotation Tool of rolabelimg)改进旋转框标注工具rolabelimg
+
 <div align="center">
 [English](./readme_EN.md)
 </div>
+
 ![wayshow.gif](GIF%2Fwayshow.gif)
+
 ###  前言
 最近在写本科毕业论文，涉及弱监督有向目标检测和旋转框标注软件的搭建。调查了市面上的一圈旋转框标注软件，其实感觉不太好用。
 - rolabelImg：网上介绍的最多的一款标注软件，但是其在2020年更新完V3之后就停止了维护；其次，本人觉得它的标注方式（先绘制矩形框——>再通过快捷键旋转至目标合适的角度——>再调整至合适的大小）虽然能够很好的避免标注框存在部分位于图像外面的风险（这是旋转框特有的问题），但是确实不够直观。
@@ -21,6 +24,13 @@
 ![my_RolabelImg](GIF%2Fway3.png)
 - 根据上图的展示，可以清晰地看出，相较于RolabelImg和LabelImg的“十字标注法”，本文所设计的旋转框绘制方法更为直观且直接。该方法无需任何额外的繁琐步骤，使得标注过程更加高效且精准，为旋转目标检测任务提供了更为便捷和准确的标注手段。
 ![com](GIF%2Fcom.png)
+
+### 与我的毕业论文中的区别
+我的毕业论文提出一种基于H2RBox的弱监督旋转目标检测模型，旨在实现水平框标注数据集到旋转框标注的高效转换。该模型能够有效利用已有的水平框标注数据，通过弱监督学习的方式，衡量不同旋转视角下检测的一致性，自动提取目标的方向信息，并将其转换为精确的旋转框标注，为旋转目标检测任务提供有力的辅助数据标注支持。H2RBox模型：Yang X, Zhang G, Li W, et al. H2rbox: Horizontal box annotation is all you need for oriented object detection[J]. arXiv preprint arXiv:2210.06742, 2022.
+<video width="1920" controls>
+  <source src="./GIF/my_model.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 ### others
 以下为B站的一位up主的介绍
 
