@@ -2,9 +2,12 @@
 
 # (Improved Rotating Box Annotation Tool of rolabelimg)改进旋转框标注工具rolabelimg
 
+<br><br>
 <div align="center" style="margin-bottom: 2em;">
-  <a href="./readme_EN.md" style="font-size: 24px;">English</a>
+  <a href="./readme_EN.md" style="font-size: 40px;">English</a>
 </div>
+<br><br>
+<br><br>
 
 ![wayshow.gif](GIF%2Fwayshow.gif)
 
